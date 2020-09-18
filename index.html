@@ -23,7 +23,8 @@
 					<header id="header" class="alt">
 						<h1><a href="index.html">Yousaf Shaheen - Software Developer</a></h1>
 						<nav>
-							<a href="#menu">Menu</a>
+							<!-- menu button -->
+							<!-- <a href="#menu">Menu</a> -->
 						</nav>
 					</header>
 
@@ -39,7 +40,8 @@
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
-
+				
+				
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
@@ -59,7 +61,7 @@
 									<div class="content">
 										<h2 class="major">GitHub</h2>
 										<p>github lol</p>
-										<a href="https://github.com/YousafShaheen" target="_blank" class="special">Learn more</a>
+										<a href="https://github.com/YousafShaheen" target="_blank" class="special">Explore</a>
 									</div>
 								</div>
 							</section>
@@ -70,7 +72,7 @@
 									<a href="https://www.linkedin.com/in/yousaf-shaheen/" target="_blank" class="image"><img src="images/linkedinlogo.png" alt="" /></a>
 									<div class="content">
 										<h2 class="major">LinkedIn</h2>
-										<p>wanna connect? go fuck yourself.</p>
+										<p>wanna connect? </p>
 										<a href="https://www.linkedin.com/in/yousaf-shaheen/" target="_blank" class="special">Connect</a>
 									</div>
 								</div>
@@ -84,7 +86,7 @@
 									<div class="content">
 										<h2 class="major">Resume</h2>
 										<p>pls give job.</p>
-										<a href="assets/Resume.pdf" target="_blank" class="special">Learn more</a>
+										<a href="assets/Resume.pdf" target="_blank" class="special">View Resume</a>
 									</div>
 								</div>
 							</section>
@@ -115,7 +117,7 @@
 											<a href="#" class="special">Learn more</a>
 										</article>
 										
-										
+										<!-- project cards
 										<article>
 											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
 											<h3 class="major">Ante fermentum</h3>
@@ -130,12 +132,14 @@
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
 											<a href="#" class="special">Learn more</a>
 										</article>
-										
+										-->
 										
 									</section>
+									<!-- browse all button
 									<ul class="actions">
 										<li><a href="#" class="button">Browse All</a></li>
 									</ul>
+									-->
 								</div>
 							</section>
 
@@ -145,7 +149,14 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
-							<p>send me a message dipshit.</p>
+							
+							<form id="fr1">
+    <input type="text" id="tb1" />
+    <input type="text" id="tb2" />
+    <input type="button" id="bt1" value="click" />
+</form>
+							
+							<p>send me a message.</p>
 							<form method="post" action="#">
 								<div class="fields">
 									<div class="field">
@@ -180,7 +191,7 @@
 								<!--<li class="icon brands fa-youtube"><a href="#" target="_blank">instagram.com/untitled-tld</a></li> -->
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Yousaf Shaheen. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
@@ -188,6 +199,17 @@
 			</div>
 
 		<!-- Scripts -->
+		<script type="text/javascript">
+$(document).ready(function() {
+    $('#bt1').click(function() {
+        $('#fr1').attr('action',
+                       'mailto:shaheeny@mcmaster.ca?subject=' +
+                       $('#tb1').val() + '&body=' + $('#tb2').val());
+        $('#fr1').submit();
+    });
+});
+    }
+</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
