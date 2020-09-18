@@ -154,7 +154,6 @@
 								method="post" id="email_form">
 
 								<input type="text" name="subject" placeholder="Subject" />
-								<input type="text" name="email" placeholder="Email" />
     							<textarea name="text" placeholder="Message"></textarea>
     							<!-- replace value with your access token -->
     							<input type="hidden" name="access_token" value="941zwlu2hd5w1mkno5184lii" />
@@ -167,8 +166,18 @@
     							<input id="submit_form" type="submit" value="Send" />
 							</form>
 							
+							
+							<form action="form.php" method="post">
+							Name: <input type="text" name="name"><br>
+							Email: <input type="text" name="email"><br>
+							Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+							<input type="submit" name="submit" value="Submit">
+							</form>
+							
+
+							
 							<p>send me a message.</p>
-							<form method="post" action="#">
+							<form method="post" action="form.php">
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
