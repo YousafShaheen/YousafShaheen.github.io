@@ -1,231 +1,36 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Yousaf Shaheen</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-	
+<?php 
+if(isset($_POST['submit'])){
+    $to = "email@example.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
 
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<!DOCTYPE html>
+<head>
+<title>Form submission</title>
+</head>
+<body>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Yousaf Shaheen - Software Developer</a></h1>
-						<nav>
-							<!-- menu button -->
-							<!-- <a href="#menu">Menu</a> -->
-						</nav>
-					</header>
+<form action="" method="post">
+First Name: <input type="text" name="first_name"><br>
+Last Name: <input type="text" name="last_name"><br>
+Email: <input type="text" name="email"><br>
+Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+<input type="submit" name="submit" value="Submit">
+</form>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
-				
-				
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<!--<div class="logo"><span class="icon fa-gem"></span></div>-->
-							<h2>Yousaf Shaheen</h2>
-							<p>Software Developer</p>
-						</div>
-					</section>
-
-				<!-- Wrapper -->
-					<section id="wrapper">
-
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="https://github.com/YousafShaheen" target="_blank" class="image"><img src="images/githublogo.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">GitHub</h2>
-										<p>github lol</p>
-										<a href="https://github.com/YousafShaheen" target="_blank" class="special">Explore</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="https://www.linkedin.com/in/yousaf-shaheen/" target="_blank" class="image"><img src="images/linkedinlogo.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">LinkedIn</h2>
-										<p>wanna connect? </p>
-										<a href="https://www.linkedin.com/in/yousaf-shaheen/" target="_blank" class="special">Connect</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-								
-									<a href="assets/Resume.pdf" target="_blank" class="image"><img src="images/resumelogo.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Resume</h2>
-										<p>pls give job.</p>
-										<a href="assets/Resume.pdf" target="_blank" class="special">View Resume</a>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Projects</h2>
-									<p>these are my projects lol</p>
-									<section class="features">
-									
-									
-										<article>
-											<a href="#" class="image"><img src="images/nutribudlogo.png" alt="" /></a>
-											<h3 class="major">NutriBud</h3>
-											<p>Nutrition tracking app with machine learning image 
-											recognition to determine nutritional
-											information of food.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										
-										
-										<article>
-											<a href="#" class="image"><img src="images/astDodgelogo.png" alt="" /></a>
-											<h3 class="major">Asteroid Dodge</h3>
-											<p>A basic 2D game made using C# and windows forms.
-											Purpose of making this game was to learn C#.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										
-										<!-- project cards
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										
-										
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										-->
-										
-									</section>
-									<!-- browse all button
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-									-->
-								</div>
-							</section>
-
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							
-							<form action="https://postmail.invotes.com/send"
-								method="post" id="email_form">
-
-								<input type="text" name="subject" placeholder="Subject" />
-    							<textarea name="text" placeholder="Message"></textarea>
-    							<!-- replace value with your access token -->
-    							<input type="hidden" name="access_token" value="941zwlu2hd5w1mkno5184lii" />
-
-    							<input type="hidden" name="success_url"
-    							  value=".?message=Email+Successfully+Sent%21&isError=0" />
-    							<input type="hidden" name="error_url"
-    							  value=".?message=Email+could+not+be+sent.&isError=1" />
-
-    							<input id="submit_form" type="submit" value="Send" />
-							</form>
-							
-							<h2 class="major">Get in touch****************************</h2>
-							<form action="form.php" method="post">
-							First Name: <input type="text" name="first_name"><br>
-							Last Name: <input type="text" name="last_name"><br>
-							Email: <input type="text" name="email"><br>
-							Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
-							<input type="submit" name="submit" value="Submit">
-							</form>
-							
-
-							
-							<p>send me a message.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							
-							
-							
-							
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Brampton ON, Canada
-								</li>
-								<li class="icon solid fa-phone">(647) 447-4532</li>
-								<li class="icon solid fa-envelope"><a href="mailto:Yousaf.A.Shaheen@gmail.com">Yousaf.A.Shaheen@gmail.com</a></li>
-								<li class="icon brands fa-github"><a href="https://github.com/YousafShaheen" target="_blank">My GitHub</a></li>
-								<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/yousaf-shaheen/" target="_blank">My LinkedIn</a></li>
-								<!--<li class="icon brands fa-youtube"><a href="#" target="_blank">instagram.com/untitled-tld</a></li> -->
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Yousaf Shaheen. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+</body>
+</html> 
