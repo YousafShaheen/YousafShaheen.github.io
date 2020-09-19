@@ -175,17 +175,14 @@
 							</form>
 
 							<script type="text/javascript">
-								function loadEvents() {
-									var mailString;
-									function updateMailString() {
-										mailString = '?subject=' + encodeURIComponent($('#subject').val())
-											+ '&body=' + encodeURIComponent($('#message').val());
-										$('#bt1').attr('href',  'mailto:shaheeny@mcmaster.ca' + mailString);
-									}
-									$( "#subject" ).focusout(function() { updateMailString(); });
-									$( "#message" ).focusout(function() { updateMailString(); });
-									updateMailString();
-								}
+								$(document).ready(function() {
+									$('#bt1').click(function() {
+										$('#fr1').attr('action',
+													   'mailto:shaheeny@mcmaster.ca?subject=' +
+													   $('#tb1').val() + '&body=' + $('#tb2').val());
+										$('#fr1').submit();
+									});
+								});
 							</script>
 							
 							<h2 class="major">****************************</h2>
