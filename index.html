@@ -152,7 +152,7 @@
 							
 							<p>send me a message.</p>
 							
-							<form onsubmit="subject.value = subject.value +': '+ email.value"
+							<form onsubmit="text.value = 'From: ' + email.value + '\n' + text.value"
 								action="https://postmail.invotes.com/send" method="post" id="email_form">
 							
 								<label for="subject">Name</label>
@@ -163,7 +163,7 @@
 								
 
 								<label for="text">Message</label>
-    							<textarea name="text" placeholder="Message"></textarea>
+    							<textarea name="text" placeholder="Message" rows="4"></textarea>
     							
     							<input type="hidden" name="access_token" value="941zwlu2hd5w1mkno5184lii" />
 
@@ -172,37 +172,10 @@
     							<input type="hidden" name="error_url"
     							  value=".?message=Email+could+not+be+sent.&isError=1" /><br>
 								
-    							<input id="submit_form" type="submit" value="Send" />
+    							<input id="submit_form" type="submit" value="Send Message" />
 							</form>
 
-							
-							
-							<h2 class="major">****************************</h2>
-							
-							<p>send me a message.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							
-							
-							
-							
+
 							<ul class="contact">
 								<li class="icon solid fa-home">
 									Brampton ON, Canada
