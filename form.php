@@ -1,17 +1,17 @@
-<?PHP
-$sender = 'shaheeny@mcmaster.ca';
-$recipient = 'yousaf.a.shaheen@gmail.com';
+<?php
 
-$subject = "php mail test";
-$message = "php test message";
-$headers = 'From:' . $sender;
+if($_POST["submit"]) {
+    $recipient="shaheeny@mcmaster.ca";
+    $subject="Form to email message";
+    $sender=$_POST["sender"];
+    $senderEmail=$_POST["senderEmail"];
+    $message=$_POST["message"];
 
-if (true)
-{
-    echo "Message accepted";
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
 }
-else
-{
-    echo "Error: Message not accepted";
-}
+
 ?>
