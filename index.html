@@ -167,11 +167,12 @@
 							</form>
 							
 							<h2 class="major">****************************</h2>
-							<p><input id="subject" type="text" placeholder="type your subject here" 
-								class="form-control"></p>
-							<p><input id="message" type="text" placeholder="type your message here" 
-								class="form-control"></p>
-							<p><a id="mail-link" class="btn btn-primary">Create email</a></p>
+							
+							<form id="fr1">
+								<input type="text" id="tb1" />
+								<input type="text" id="tb2" />
+								<input type="button" id="bt1" value="click" />
+							</form>
 
 							<script type="text/javascript">
 								function loadEvents() {
@@ -179,7 +180,7 @@
 									function updateMailString() {
 										mailString = '?subject=' + encodeURIComponent($('#subject').val())
 											+ '&body=' + encodeURIComponent($('#message').val());
-										$('#mail-link').attr('href',  'mailto:shaheeny@mcmaster.ca' + mailString);
+										$('#bt1').attr('href',  'mailto:shaheeny@mcmaster.ca' + mailString);
 									}
 									$( "#subject" ).focusout(function() { updateMailString(); });
 									$( "#message" ).focusout(function() { updateMailString(); });
