@@ -150,40 +150,32 @@
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
 							
-							<form action="https://postmail.invotes.com/send"
-								method="post" id="email_form">
+							<p>send me a message.</p>
+							
+							<form onsubmit="subject.value = subject.value +': '+ email.value"
+								action="https://postmail.invotes.com/send" method="post" id="email_form">
+							
+								<label for="subject">Name</label>
+								<input type="text" name="subject" placeholder="Name" /><br>
+								
+								<label for="email">Email</label>
+								<input type="text" name="email" placeholder="Email" /><br>
+								
 
-								<input type="text" name="subject" placeholder="Subject" />
+								<label for="text">Message</label>
     							<textarea name="text" placeholder="Message"></textarea>
-    							<!-- replace value with your access token -->
+    							
     							<input type="hidden" name="access_token" value="941zwlu2hd5w1mkno5184lii" />
 
     							<input type="hidden" name="success_url"
     							  value=".?message=Email+Successfully+Sent%21&isError=0" />
     							<input type="hidden" name="error_url"
-    							  value=".?message=Email+could+not+be+sent.&isError=1" />
-
+    							  value=".?message=Email+could+not+be+sent.&isError=1" /><br>
+								
     							<input id="submit_form" type="submit" value="Send" />
 							</form>
-							
-							<h2 class="major">****************************</h2>
-							
-							<form id="fr1">
-								<input type="text" id="tb1" />
-								<input type="text" id="tb2" />
-								<input type="button" id="bt1" value="click" />
-							</form>
 
-							<script type="text/javascript">
-								$(document).ready(function() {
-									$('#bt1').click(function() {
-										$('#fr1').attr('action',
-													   'mailto:shaheeny@mcmaster.ca?subject=' +
-													   $('#tb1').val() + '&body=' + $('#tb2').val());
-										$('#fr1').submit();
-									});
-								});
-							</script>
+							
 							
 							<h2 class="major">****************************</h2>
 							
