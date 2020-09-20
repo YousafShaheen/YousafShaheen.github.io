@@ -152,7 +152,7 @@
 							
 							<p>send me a message.</p>
 							
-							<form onsubmit="text.value = 'From: ' + email.value + '\n\n' + text.value"
+							<form onsubmit="text.value = 'From: ' + email.value + '\n\n' + blop.value"
 								action="https://postmail.invotes.com/send" method="post" id="email_form">
 							
 								<label for="subject">Name</label>
@@ -162,8 +162,12 @@
 								<input type="text" name="email" placeholder="Email" /><br>
 								
 
-								<label for="text">Message</label>
-    							<textarea name="text" placeholder="Message" rows="4"></textarea>
+
+								<label for="blop">Message</label>
+    							<textarea name="blop" placeholder="Message" rows="4"></textarea>
+								
+								<input type="hidden" name="text" value="" />
+								
     							
     							<input type="hidden" name="access_token" value="941zwlu2hd5w1mkno5184lii" />
 
